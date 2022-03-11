@@ -16,7 +16,7 @@ async function main() {
 
   // We get the contract to deploy
   const Ownable = await hre.ethers.getContractFactory("Ownable");
-  const ownable = await Ownable.deploy(otro.address);
+  const ownable = await Ownable.deploy(ramiro.address);
 
   await ownable.deployed();
 
@@ -24,7 +24,7 @@ async function main() {
   const foo = await ownable.owner();
   console.log("Este es el owner:", foo);
 
-  await ownable.transferOwnership(ramiro.address);
+  await ownable.transferOwnership(otro.address);
 
 }
 
